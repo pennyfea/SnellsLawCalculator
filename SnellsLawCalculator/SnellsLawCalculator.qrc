@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="SnellsLawCalculator">
+    <file>img.jpg</file>
+  </qresource>
+</RCC>
