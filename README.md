@@ -1,1 +1,1 @@
-# SnellsLawCalculator-
+# SnellsLawCalculator
