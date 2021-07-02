@@ -1,7 +1,7 @@
 #include "SnellsLawWidget.h"
 
 SnellsLawWidget::SnellsLawWidget(QWidget* parent_)
-	: QWidget(parent_), angleOfIncidence(135.0), angleOfRefraction(315.0), refractiveIndex(0.0), incidenceIndex(0.0)
+	: QWidget(parent_), angleOfIncidence(0.0), angleOfRefraction(0.0), refractiveIndex(0.0), incidenceIndex(0.0)
 {
 	ui.setupUi(this);
 	parent = parent_;
@@ -31,24 +31,29 @@ void SnellsLawWidget::setIncidenceIndex(double incidenceIndex_)
 
 void SnellsLawWidget::paintEvent(QPaintEvent* event)
 {
-	QPainter painter(this);
-	painter.setPen(QPen(Qt::black, Qt::SolidLine));
 	int width = parent->width();
 	int height = parent->height();
+
+	QPainter painter(this);
+
+	painter.setPen(QPen(Qt::black, Qt::SolidLine));
 	painter.drawLine(0, height / 2, width, height / 2);
-	painter.setPen(QPen(Qt::black, Qt::DashLine));
+
+
+	painter.setPen(QPen(Qt::green, Qt::DashLine));
 	painter.drawLine(width / 2, 0, width / 2, height);
 
 	QLineF incidenceLine;
+	painter.setPen(QPen(Qt::red, Qt::SolidLine));
 	incidenceLine.setP1(QPoint(width / 2, height / 2));
-	incidenceLine.setAngle(qreal(angleOfIncidence));
-	incidenceLine.setLength(75);
+	incidenceLine.setAngle(qreal(angleOfIncidence) + qreal(90.0));
+	incidenceLine.setLength(100);
 	painter.drawLine(incidenceLine);
 
 	QLineF refractiveLine;
 	refractiveLine.setP1(QPoint(width / 2, height / 2));
-	refractiveLine.setAngle(angleOfRefraction);
-	refractiveLine.setLength(75);
+	refractiveLine.setAngle(qreal(angleOfRefraction) - qreal(90.0));
+	refractiveLine.setLength(100);
 	painter.drawLine(refractiveLine);	
 }
 

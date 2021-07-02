@@ -44,14 +44,20 @@ void SnellsLawController::updateCalculation(double value)
 	{
 	case 0:
 		snellsLawCalculator.setIncidenceIndex(value);
+		snellsLawCalculator.setAngleOfRefraction(this->angleOfRefraction);
+		snellsLawCalculator.setAngleOfIncidence(this->angleOfIncidence);
 		break;
 	case 1:
 		snellsLawCalculator.setRefractiveIndex(value);
+		snellsLawCalculator.setAngleOfRefraction(this->angleOfRefraction);
+		snellsLawCalculator.setAngleOfIncidence(this->angleOfIncidence);
 		break;
 	case 2:
 		snellsLawCalculator.setAngleOfIncidence(value);
+		snellsLawCalculator.setAngleOfRefraction(this->angleOfRefraction);
 		break;
 	case 3:
+		snellsLawCalculator.setAngleOfIncidence(this->angleOfIncidence);
 		snellsLawCalculator.setAngleOfRefraction(value);
 		break;
 	default:

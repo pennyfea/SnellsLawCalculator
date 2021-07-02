@@ -25,13 +25,14 @@ SnellsLawCalculator::SnellsLawCalculator(QWidget* parent)
 	ui->angleOfIncidenceDoubleSpinBox->setValue(0.0);
 	ui->angleOfRefractionDoubleSpinBox->setValue(0.0);
 
+	ui->angleOfIncidenceDoubleSpinBox->setRange(0.0, 90.0);
+	ui->angleOfRefractionDoubleSpinBox->setRange(0.0, 90.0);
+
+
 	ui->incidenceIndexDoubleSpinBox->setDecimals(3);
 	ui->refractiveIndexDoubleSpinBox->setDecimals(3);
 	ui->angleOfIncidenceDoubleSpinBox->setDecimals(3);
 	ui->angleOfRefractionDoubleSpinBox->setDecimals(3);
-
-
-	//ui->angleOfRefractionDoubleSpinBox->setDisabled(true);
 
 	ui->incidenceIndexDoubleSpinBox->setButtonSymbols(QAbstractSpinBox::NoButtons);
 	ui->refractiveIndexDoubleSpinBox->setButtonSymbols(QAbstractSpinBox::NoButtons);
