@@ -46,6 +46,9 @@
     <ClCompile Include="SnellsLawController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SnellsLawWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Angle.h">
@@ -59,9 +62,15 @@
     <QtMoc Include="SnellsLawController.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="SnellsLawWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="SnellsLawCalculator.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="SnellsLawWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

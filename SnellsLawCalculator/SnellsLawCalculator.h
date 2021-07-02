@@ -3,11 +3,12 @@
 */
 
 #pragma once
-#include "ui_SnellsLawCalculator.h"
 #include <QtWidgets/QMainWindow>
 #include <QDoubleValidator>
 #include <QDebug>
 #include <QButtonGroup>
+#include "ui_SnellsLawCalculator.h"
+#include "SnellsLawWidget.h"
 
 namespace Ui {
     class SnellsLawCalculator;
@@ -32,10 +33,10 @@ public:
     int calculateGroupIndex();
 
     void setIncidenceIndex(double incidentIndex);
+    void setCalculateGroup(int index);
     void setRefractiveIndex(double refractiveIndex);
     void setAngleOfIncidence(double angleOfIncidence);
     void setAngleOfRefraction(double angleOfRefraction);
-    void setCalculateGroup(int index);
   
 signals:
     void refractiveIndexChanged(double refractiveIndex);
@@ -46,5 +47,8 @@ signals:
 
 private:
     QButtonGroup* calculateGroup;
+    SnellsLawWidget* snellsLawWidget;
+    QFrame* line;
     Ui::SnellsLawCalculatorClass *ui;
+
 };

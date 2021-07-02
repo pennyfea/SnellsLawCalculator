@@ -7,12 +7,17 @@ SnellsLawCalculator::SnellsLawCalculator(QWidget* parent)
 {
 	ui->setupUi(this);
 
+	snellsLawWidget = new SnellsLawWidget(ui->verticalLayoutWidget);
+	snellsLawWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+	ui->widgetVerticalLayout->insertWidget(0, snellsLawWidget);
+	ui->widgetVerticalLayout->setAlignment(snellsLawWidget, Qt::AlignCenter);
+
 	calculateGroup = new QButtonGroup(this);
 	calculateGroup->addButton(ui->incidenceIndexRadioButton, 0);
 	calculateGroup->addButton(ui->refractiveIndexRadioButton, 1);
 	calculateGroup->addButton(ui->angleOfIncidenceRadioButton, 2);
 	calculateGroup->addButton(ui->angleOfRefractionRadioButton, 3);
-	//ui->angleOfRefractionRadioButton->setChecked(true);s
 
 	setWindowTitle("Snell's Law Calculator");
 	ui->incidenceIndexDoubleSpinBox->setValue(0.0);
@@ -98,12 +103,14 @@ void SnellsLawCalculator::setIncidenceIndex(double incidentIndex)
 
 void SnellsLawCalculator::setAngleOfRefraction(double angleOfRefraction)
 {
+	snellsLawWidget->setAngleOfRefraction(angleOfRefraction);
 	ui->angleOfRefractionDoubleSpinBox->setValue(angleOfRefraction);
 }
 
 
 void SnellsLawCalculator::setAngleOfIncidence(double angleOfIncidence)
 {
+	snellsLawWidget->setAngleOfIncidence(angleOfIncidence);
 	ui->angleOfIncidenceDoubleSpinBox->setValue(angleOfIncidence);
 }
 

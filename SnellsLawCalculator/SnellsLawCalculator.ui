@@ -132,21 +132,16 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>10</x>
       <y>10</y>
-      <width>671</width>
+      <width>871</width>
       <height>271</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">image: url(:/SnellsLawCalculator/img.jpg);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
+    <layout class="QVBoxLayout" name="widgetVerticalLayout"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
