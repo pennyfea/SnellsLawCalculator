@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QPainter>
 #include "ui_SnellsLawWidget.h"
+#include <QLabel>
 
 class SnellsLawWidget : public QWidget
 {
@@ -18,13 +19,19 @@ public:
 
 protected:
 	void paintEvent(QPaintEvent* event) override;
-	QSize sizeHint() const override;
+	virtual QSize sizeHint() const override;
 
 private:
+	int width;
+	int height;
+	const int indexLength = 75;
+	const qreal angleOffset = 90.0;
+	const QString theta = QChar(0x98, 0x03);
 	Ui::SnellsLawWidget ui;
 	double angleOfRefraction;
 	double angleOfIncidence;
 	double refractiveIndex;
 	double incidenceIndex;
 	QWidget* parent;
+
 };

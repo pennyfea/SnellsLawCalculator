@@ -7,6 +7,8 @@ SnellsLawCalculator::SnellsLawCalculator(QWidget* parent)
 {
 	ui->setupUi(this);
 
+	this->setFixedSize(900, 700);
+
 	snellsLawWidget = new SnellsLawWidget(ui->verticalLayoutWidget);
 	snellsLawWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
@@ -97,27 +99,27 @@ int SnellsLawCalculator::calculateGroupIndex()
 }
 
 
-void SnellsLawCalculator::setIncidenceIndex(double incidentIndex)
+void SnellsLawCalculator::setIncidenceIndex(double incidenceIdx)
 {
-	ui->incidenceIndexDoubleSpinBox->setValue(incidentIndex);
+	ui->incidenceIndexDoubleSpinBox->setValue(incidenceIdx);
 }
 
-void SnellsLawCalculator::setAngleOfRefraction(double angleOfRefraction)
+void SnellsLawCalculator::setAngleOfRefraction(double angleOfRefrac)
 {
-	snellsLawWidget->setAngleOfRefraction(angleOfRefraction);
-	ui->angleOfRefractionDoubleSpinBox->setValue(angleOfRefraction);
+	snellsLawWidget->setAngleOfRefraction(angleOfRefrac);
+	ui->angleOfRefractionDoubleSpinBox->setValue(angleOfRefrac);
 }
 
 
-void SnellsLawCalculator::setAngleOfIncidence(double angleOfIncidence)
+void SnellsLawCalculator::setAngleOfIncidence(double angleOfInci)
 {
-	snellsLawWidget->setAngleOfIncidence(angleOfIncidence);
-	ui->angleOfIncidenceDoubleSpinBox->setValue(angleOfIncidence);
+	snellsLawWidget->setAngleOfIncidence(angleOfInci);
+	ui->angleOfIncidenceDoubleSpinBox->setValue(angleOfInci);
 }
 
-void SnellsLawCalculator::setRefractiveIndex(double refractiveIndex)
+void SnellsLawCalculator::setRefractiveIndex(double refractiveIdx)
 {
-	ui->refractiveIndexDoubleSpinBox->setValue(refractiveIndex);
+	ui->refractiveIndexDoubleSpinBox->setValue(refractiveIdx);
 }
 
 void SnellsLawCalculator::setCalculateGroup(int index)

@@ -25,18 +25,7 @@ SnellsLawController::SnellsLawController(SnellsLaw& snellsLaw_,  SnellsLawCalcul
 
 }
 
-void SnellsLawController::setAngleOfRefraction(double angleOfRefraction_)
-{
-	this->angleOfRefraction = angleOfRefraction_;
-	emit eAngleOfRefraction(this->angleOfRefraction);
 
-}
-
-void SnellsLawController::setCalculatedGroupIndex(int index_)
-{
-	this->index = index_;
-	emit eCalculateIndex(this->index);
-}
 
 void SnellsLawController::updateCalculation(double value)
 {
@@ -83,6 +72,16 @@ void SnellsLawController::setRefractiveIndex(double refractiveIndex_)
 	emit eRefractiveIndex(this->refractiveIndex);
 }
 
+void SnellsLawController::setAngleOfRefraction(double angleOfRefraction_)
+{
+	this->angleOfRefraction = angleOfRefraction_;
+	emit eAngleOfRefraction(this->angleOfRefraction);
 
+}
 
+void SnellsLawController::setCalculatedGroupIndex(int index_)
+{
+	this->index = index_;
+	emit eCalculateIndex(this->index);
+}
 

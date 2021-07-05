@@ -32,11 +32,11 @@ public:
     double angleOfRefraction();
     int calculateGroupIndex();
 
-    void setIncidenceIndex(double incidentIndex);
+    void setIncidenceIndex(double incidenceIdx);
     void setCalculateGroup(int index);
-    void setRefractiveIndex(double refractiveIndex);
-    void setAngleOfIncidence(double angleOfIncidence);
-    void setAngleOfRefraction(double angleOfRefraction);
+    void setRefractiveIndex(double refractiveIdx);
+    void setAngleOfIncidence(double angleOfInci);
+    void setAngleOfRefraction(double angleOfRefrac);
   
 signals:
     void refractiveIndexChanged(double refractiveIndex);
@@ -48,6 +48,7 @@ signals:
 private:
     QButtonGroup* calculateGroup;
     SnellsLawWidget* snellsLawWidget;
+    QLabel* interfaceLabel;
     QFrame* line;
     Ui::SnellsLawCalculatorClass *ui;
 
