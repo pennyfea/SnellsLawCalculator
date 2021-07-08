@@ -10,7 +10,7 @@ class SnellsLaw : public QObject
 	Q_OBJECT
 
 public:
-	SnellsLaw(QObject* parent = Q_NULLPTR);
+	explicit SnellsLaw(QObject* parent = Q_NULLPTR);
 	~SnellsLaw();
 	double calculateAngleOfRefraction();
 	double calculateAngleOfIncidence();

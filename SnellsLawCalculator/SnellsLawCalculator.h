@@ -7,8 +7,10 @@
 #include <QDoubleValidator>
 #include <QDebug>
 #include <QButtonGroup>
-#include "ui_SnellsLawCalculator.h"
+#include <memory>
 #include "SnellsLawWidget.h"
+#include "ui_SnellsLawCalculator.h"
+
 
 namespace Ui {
     class SnellsLawCalculator;
@@ -24,7 +26,7 @@ class SnellsLawCalculator : public QMainWindow
     Q_PROPERTY(int calculateGroupIndex READ calculateGroupIndex WRITE setCalculateGroup NOTIFY calculateGroupChanged)
 
 public:
-    SnellsLawCalculator(QWidget *parent = Q_NULLPTR);
+    explicit SnellsLawCalculator(QWidget *parent = Q_NULLPTR);
     ~SnellsLawCalculator();
     double incidenceIndex();
     double refractiveIndex();
@@ -46,10 +48,7 @@ signals:
     void calculateGroupChanged(int index);
 
 private:
-    QButtonGroup* calculateGroup;
-    SnellsLawWidget* snellsLawWidget;
-    QLabel* interfaceLabel;
-    QFrame* line;
+    std::unique_ptr<QButtonGroup> calculateGroup;
+    std::unique_ptr<SnellsLawWidget> snellsLawWidget;
     Ui::SnellsLawCalculatorClass *ui;
-
 };

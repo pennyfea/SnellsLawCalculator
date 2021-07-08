@@ -45,7 +45,6 @@ double SnellsLaw::calculateCriticalAngle()
 
 void SnellsLaw::updateCalculation()
 {
-	//qDebug() << "Critical Angle: " << calculateCriticalAngle();
 	switch (index) 
 	{
 		case 0:

@@ -9,13 +9,13 @@ SnellsLawCalculator::SnellsLawCalculator(QWidget* parent)
 
 	this->setFixedSize(900, 700);
 
-	snellsLawWidget = new SnellsLawWidget(ui->verticalLayoutWidget);
+	snellsLawWidget = std::make_unique<SnellsLawWidget>(ui->verticalLayoutWidget);
 	snellsLawWidget->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-	ui->widgetVerticalLayout->insertWidget(0, snellsLawWidget);
-	ui->widgetVerticalLayout->setAlignment(snellsLawWidget, Qt::AlignCenter);
+	ui->widgetVerticalLayout->insertWidget(0, snellsLawWidget.get());
+	ui->widgetVerticalLayout->setAlignment(snellsLawWidget.get(), Qt::AlignCenter);
 
-	calculateGroup = new QButtonGroup(this);
+	calculateGroup = std::make_unique<QButtonGroup>(this);
 	calculateGroup->addButton(ui->incidenceIndexRadioButton, 0);
 	calculateGroup->addButton(ui->refractiveIndexRadioButton, 1);
 	calculateGroup->addButton(ui->angleOfIncidenceRadioButton, 2);
@@ -61,7 +61,7 @@ SnellsLawCalculator::SnellsLawCalculator(QWidget* parent)
 			emit angleOfRefractionChanged(angleOfRefraction());
 		});
 
-	connect(calculateGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+	connect(calculateGroup.get(), static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
 		[&](int id) {
 			emit calculateGroupChanged(calculateGroupIndex());
 		});

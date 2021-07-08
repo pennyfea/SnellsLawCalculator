@@ -40,5 +40,4 @@ private:
 	int index;
 	SnellsLaw& snellsLaw;
 	SnellsLawCalculator& snellsLawCalculator;
-	std::unique_ptr <SnellsLawController> snellsLawController;
 };
