@@ -5,6 +5,10 @@
 #include "ui_SnellsLawWidget.h"
 #include <QLabel>
 
+namespace Ui {
+	class SnellsLawWidget;
+}
+
 class SnellsLawWidget : public QWidget
 {
 	Q_OBJECT
@@ -32,6 +36,6 @@ private:
 	const qreal angleOffset = 90.0; // void QLineF::setAngle(qreal angle) - Zero degrees is at the 3 o'clock position.
 	const QString theta = QChar(0x98, 0x03); // Theta symbol
 	QWidget* parent;
-	Ui::SnellsLawWidget ui;
+	Ui::SnellsLawWidget *ui;
 
 };

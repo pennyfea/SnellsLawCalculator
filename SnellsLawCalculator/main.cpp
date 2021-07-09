@@ -14,11 +14,20 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
 
+    // Takes care of input arguments, but also a lot of other things, and most notably, the event loop. 
+    // The event loop is a loop that waits for user input in GUI applications.
+    QApplication a(argc, argv);
+    
+    // Model
     SnellsLaw snellsLaw;
+    // View
     SnellsLawCalculator snellsLawCalculator;
+    // Controller
     SnellsLawController snellsLawController(snellsLaw, snellsLawCalculator);
+
     snellsLawCalculator.show();
+
+    // Event loop is launched
     return a.exec();
 }

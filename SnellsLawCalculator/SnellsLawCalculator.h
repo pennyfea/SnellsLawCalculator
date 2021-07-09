@@ -18,7 +18,12 @@ namespace Ui {
 
 class SnellsLawCalculator : public QMainWindow
 {
+    // QOBJECT MACRO translates the QT syntax like "connect", "signals", "slots", etc into regular C++ syntax.
     Q_OBJECT
+
+    // Q_Property is based on the Meta-Object System that also provides inter-object communication via signals and slots.
+    // This macro is used for declaring properties in classes that inherit QObject.
+    // Properties behave like class data members, but they have additional features accessible through the Meta-Object System
     Q_PROPERTY(double incidenceIndex READ incidenceIndex WRITE setIncidenceIndex NOTIFY incidenceIndexChanged)
     Q_PROPERTY(double refractiveIndex READ refractiveIndex WRITE setRefractiveIndex NOTIFY refractiveIndexChanged)
     Q_PROPERTY(double angleOfIncidence READ incidenceIndex WRITE setIncidenceIndex NOTIFY angleOfIncidenceChanged)
@@ -50,5 +55,7 @@ signals:
 private:
     std::unique_ptr<QButtonGroup> calculateGroup;
     std::unique_ptr<SnellsLawWidget> snellsLawWidget;
+
+    //ui object provides the code for setting up and managing the user interface.
     Ui::SnellsLawCalculatorClass *ui;
 };

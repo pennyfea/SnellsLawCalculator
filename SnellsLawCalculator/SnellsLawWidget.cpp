@@ -3,7 +3,7 @@
 SnellsLawWidget::SnellsLawWidget(QWidget* parent_)
 	: QWidget(parent_), angleOfIncidence(0.0), angleOfRefraction(0.0), refractiveIndex(0.0), incidenceIndex(0.0)
 {
-	ui.setupUi(this);
+	ui->setupUi(this);
 	parent = parent_;
 	width = parent->width();
 	height = parent->height();
@@ -11,6 +11,7 @@ SnellsLawWidget::SnellsLawWidget(QWidget* parent_)
 
 SnellsLawWidget::~SnellsLawWidget()
 {
+	delete ui;
 }
 
 

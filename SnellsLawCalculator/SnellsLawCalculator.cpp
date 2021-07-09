@@ -5,8 +5,12 @@ SnellsLawCalculator::SnellsLawCalculator(QWidget* parent)
 	: QMainWindow(parent),
 	ui(new Ui::SnellsLawCalculatorClass)
 {
+	// The constructor for the subclass constructs and configures all the widget sand layouts
+	// Just by calling the ui object's setupUi() function. 
+	// Once this has been done, it is possible to modify the user interface as needed.
 	ui->setupUi(this);
 
+	// Window size of the QMainWindow
 	this->setFixedSize(900, 700);
 
 	snellsLawWidget = std::make_unique<SnellsLawWidget>(ui->verticalLayoutWidget);
@@ -41,6 +45,8 @@ SnellsLawCalculator::SnellsLawCalculator(QWidget* parent)
 	ui->angleOfIncidenceDoubleSpinBox->setButtonSymbols(QAbstractSpinBox::NoButtons);
 	ui->angleOfRefractionDoubleSpinBox->setButtonSymbols(QAbstractSpinBox::NoButtons);
 
+
+	// Connecting the signals from the UI to slots in the Controller
 	connect(ui->incidenceIndexDoubleSpinBox, static_cast<void (QDoubleSpinBox::*)(double)>(
 		&QDoubleSpinBox::valueChanged), [&](double) {
 			emit incidenceIndexChanged(incidenceIndex());
