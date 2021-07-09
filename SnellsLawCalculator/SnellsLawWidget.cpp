@@ -1,7 +1,7 @@
 ﻿#include "SnellsLawWidget.h"
 
 SnellsLawWidget::SnellsLawWidget(QWidget* parent_)
-	: QWidget(parent_), angleOfIncidence(0.0), angleOfRefraction(0.0), refractiveIndex(0.0), incidenceIndex(0.0)
+	: QWidget(parent_), ui(new Ui::SnellsLawWidget),angleOfIncidence(0.0), angleOfRefraction(0.0), refractiveIndex(0.0), incidenceIndex(0.0)
 {
 	ui->setupUi(this);
 	parent = parent_;
